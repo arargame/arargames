@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ArarGames.Core/ArarGames.Core.csproj" />
+  <Project Path="ArarGames.Test/ArarGames.Test.csproj" />
+</Solution>
