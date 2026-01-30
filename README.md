@@ -28,6 +28,13 @@ Designed to standardize the workflow for ArarGames projects.
 - **MathUtil**: Helpers for Vectors and math.
 - **Timer**: Simple event-based timer.
 
+### Content & Resources
+- **EmbeddedContent**: Helper to load resources embedded in the DLL.
+  - `LoadDefaultLogo(GraphicsDevice)`: Returns the ArarGames logo.
+  - `LoadTexture(GraphicsDevice, fullResourceName)`: Loads any embedded texture.
+- **Resources**: Default embedded assets (e.g., Logo) reside in `ArarGames.Core/Resources`.
+
+
 ## Usage Example
 
 ### Creating a Screen
@@ -61,4 +68,15 @@ In your `Game1.cs`:
 ScreenManager screens = new ScreenManager(this);
 Components.Add(screens);
 InputManager.Instance.Update(); // Call in Update loop
+```
+
+### Loading Embedded Resources
+```csharp
+using ArarGames.Core.Content;
+
+// Load default logo
+Texture2D logo = EmbeddedContent.LoadDefaultLogo(GraphicsDevice);
+
+// Load custom embedded resource
+Texture2D myTexture = EmbeddedContent.LoadTexture(GraphicsDevice, "ArarGames.Core.Resources.MyFolder.MyImage.png");
 ```
